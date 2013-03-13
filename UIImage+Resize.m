@@ -2,13 +2,14 @@
 // Created by Trevor Harmon on 8/5/09.
 // Free for personal or commercial use, with or without modification.
 // No warranty is expressed or implied.
+// Modified by Albert Tong : https://github.com/AlbertTong/UIImageCategoriesTrevorHarmon
 
 #import "UIImage+Resize.h"
 #import "UIImage+RoundedCorner.h"
 #import "UIImage+Alpha.h"
 
 // Private helper methods
-@interface UIImage ()
+@interface UIImage (private)
 - (UIImage *)resizedImage:(CGSize)newSize
                 transform:(CGAffineTransform)transform
            drawTransposed:(BOOL)transpose
@@ -179,6 +180,7 @@
             transform = CGAffineTransformTranslate(transform, 0, newSize.height);
             transform = CGAffineTransformRotate(transform, -M_PI_2);
             break;
+        default:break;
     }
     
     switch (self.imageOrientation) {
@@ -193,6 +195,7 @@
             transform = CGAffineTransformTranslate(transform, newSize.height, 0);
             transform = CGAffineTransformScale(transform, -1, 1);
             break;
+        default:break;
     }
     
     return transform;

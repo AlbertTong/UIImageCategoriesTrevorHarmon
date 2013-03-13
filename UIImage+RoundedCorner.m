@@ -2,12 +2,13 @@
 // Created by Trevor Harmon on 9/20/09.
 // Free for personal or commercial use, with or without modification.
 // No warranty is expressed or implied.
+// Modified by Albert Tong : https://github.com/AlbertTong/UIImageCategoriesTrevorHarmon
 
 #import "UIImage+RoundedCorner.h"
 #import "UIImage+Alpha.h"
 
 // Private helper methods
-@interface UIImage ()
+@interface UIImage (private)
 - (void)addRoundedRectToPath:(CGRect)rect context:(CGContextRef)context ovalWidth:(CGFloat)ovalWidth ovalHeight:(CGFloat)ovalHeight;
 @end
 

@@ -2,11 +2,12 @@
 // Created by Trevor Harmon on 9/20/09.
 // Free for personal or commercial use, with or without modification.
 // No warranty is expressed or implied.
+// Modified by Albert Tong : https://github.com/AlbertTong/UIImageCategoriesTrevorHarmon
 
 #import "UIImage+Alpha.h"
 
 // Private helper methods
-@interface UIImage ()
+@interface UIImage (private)
 - (CGImageRef)newBorderMask:(NSUInteger)borderSize size:(CGSize)size;
 @end
 
