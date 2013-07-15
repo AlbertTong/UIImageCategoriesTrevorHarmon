@@ -128,15 +128,18 @@
     */
     
     /* Fix needed - otherwise in 5.0 or later, context will fail to create resulting in bad image */
-    CGContextRef bitmap = CGBitmapContextCreate(
+     CGContextRef bitmap = CGBitmapContextCreate(
                                                 NULL,
                                                 newRect.size.width,
                                                 newRect.size.height,
                                                 8, /* bits per channel */
                                                 (newRect.size.width * 4), /* 4 channels per pixel * numPixels/row */
                                                 CGColorSpaceCreateDeviceRGB(),
-                                                kCGImageAlphaPremultipliedLast
+                                                
+                                                /*fix addede for ios 7 by Rene Skov */
+                                                kCGBitmapAlphaInfoMask & kCGImageAlphaPremultipliedLast
                                                 );
+
     
     // Rotate and/or flip the image if required by its orientation
     CGContextConcatCTM(bitmap, transform);
